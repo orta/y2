@@ -9,9 +9,19 @@ Usage:
 ```sh
 npm install -g @orta/y2
 
+mkdir y2k
+cd y2k
+
 y2 init
 y2 add --dev typescript
 y2 tsc
+
+tree . -L 1
+.
+├── README.md
+├── node_modules
+├── package.json
+└── yarn.lock
 ```
 
 ### Building
@@ -28,8 +38,17 @@ cp berry/packages/yarnpkg-cli/bundles/yarn.js vendor
 
 ### Prod
 
-Be careful with this, it's definitely safe to say `y2` is not battle tested. I have removed the built-in patches (they _should_ only be needed for PNP projects) 
+Be careful with this, it's definitely safe to say `y2` is not battle tested. My specific changes:
+
+- I switched `nodeLinker` to "node_modules` and `pnpMode` to "loose" by default
+- I switched all package names from `@yarnpkg/x` to `@orta/yarn-` (this probably does not matter, because `y2` runs with a bundled copy of yarn.js)
+- I removed the default patches which are normally applied to `fsevents`, `resolve` & `typescript` ( I _believe_ these only exist for PNP support )
+- I turned off the telemetry
 
 ### License
 
 What little code in here I made it MIT. The vendored copy of [Yarn 2 is BSD 2-Clause](https://github.com/yarnpkg/yarn/blob/master/LICENSE).
+
+### Note
+
+Worth stressing, this isn't a _"Yarn 2 sucks"_ project. I'd like to use Yarn 2, this allows me to give it a shot at using it as my primary dependency manager for a while.
