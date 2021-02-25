@@ -1,9 +1,9 @@
 {
   "name": "@orta/y2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "description": "Yarn 2, but with Yarn 1 defaults",
   "bin": {
-    "y2": "./bin/y2.js"
+    "y2": "./bin/yarn.js"
   }
 }
