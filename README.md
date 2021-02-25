@@ -24,6 +24,11 @@ tree . -L 1
 └── yarn.lock
 ```
 
+### Note
+
+Alternative take: You can use `yarn set version berry && yarn config set nodeLinker node-modules` to have the yarn command default to v2, and node_modules are default too. Thanks @merceyz! 
+This will allow you to still have yarn 1 behavior in existing yarn 1 projects, but any new project gets the same experience as above.
+
 ### Building
 
 Get a CLI build created in berry, then copy it into the vendor folder.
@@ -40,7 +45,7 @@ cp berry/packages/yarnpkg-cli/bundles/yarn.js vendor
 
 Be careful with this, it's definitely safe to say `y2` is not battle tested. My specific changes:
 
-- I switched `nodeLinker` to "node_modules` and `pnpMode` to "loose" by default
+- I switched `nodeLinker` to `"node_modules"` and `pnpMode` to `"loose"` by default, this means you will just get a `yarn.lock` and `node_modules`
 - I switched all package names from `@yarnpkg/x` to `@orta/yarn-` (this probably does not matter, because `y2` runs with a bundled copy of yarn.js)
 - I removed the default patches which are normally applied to `fsevents`, `resolve` & `typescript` ( I _believe_ these only exist for PNP support )
 - I turned off the telemetry
