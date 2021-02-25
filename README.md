@@ -7,7 +7,7 @@ This is the result of that. It's a fork of [berry](https://github.com/yarnpkg/be
 Usage: 
 
 ```sh
-npm install -g @orta/y2
+npm install -g y2
 
 mkdir y2k
 cd y2k
