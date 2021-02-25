@@ -1,6 +1,6 @@
 {
   "name": "y2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Yarn 2, but with Yarn 1 defaults",
   "bin": {
