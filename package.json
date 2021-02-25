@@ -1,6 +1,6 @@
 {
   "name": "@orta/y2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "description": "Yarn 2, but with Yarn 1 defaults",
   "bin": {

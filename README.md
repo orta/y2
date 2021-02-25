@@ -14,18 +14,21 @@ y2 add --dev typescript
 y2 tsc
 ```
 
-
 ### Building
 
-Get a CLI build created, then copy it into the vendor folder.
+Get a CLI build created in berry, then copy it into the vendor folder.
 
 ```sh
 cd berry
 yarn build:cli
 
 cd ..
-cp berry/packages/yarnpkg-cli/bin/yarn.js vendor
+cp berry/packages/yarnpkg-cli/bundles/yarn.js vendor
 ```
+
+### Prod
+
+Be careful with this, it's definitely safe to say `y2` is not battle tested. I have removed the built-in patches (they _should_ only be needed for PNP projects) 
 
 ### License
 
