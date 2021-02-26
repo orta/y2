@@ -26,8 +26,7 @@ tree . -L 1
 
 ### Note
 
-Alternative take: You can use `yarn set version berry && yarn config set nodeLinker node-modules` to have the yarn command default to v2, and node_modules are default too. Thanks @merceyz! 
-This will allow you to still have yarn 1 behavior in existing yarn 1 projects, but any new project gets the same experience as above.
+Alternative take: For a single project you can use `yarn set version berry && yarn config set nodeLinker node-modules` to have the yarn command default to v2, and node_modules are default too. This is OK, but it means you have to keep opting in to use berry.
 
 ### Building
 
